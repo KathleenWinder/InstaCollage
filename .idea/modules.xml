@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/InstaCollage/InstaCollage.iml" filepath="$PROJECT_DIR$/InstaCollage/InstaCollage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InstaCollageProject.iml" filepath="$PROJECT_DIR$/InstaCollageProject.iml" />
+    </modules>
+  </component>
+</project>
+
