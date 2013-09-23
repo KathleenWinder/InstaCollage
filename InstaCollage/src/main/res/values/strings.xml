@@ -4,5 +4,8 @@
     <string name="app_name">InstaCollage</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="nickname_hint">Введите никнейм пользователя</string>
+    <string name="btn_get">Давай коллаж!</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
