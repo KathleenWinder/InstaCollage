@@ -1,19 +1,25 @@
 package ru.akbashev.instacollage;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
+import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -60,23 +66,47 @@ public class MainActivity extends Activity {
     public static final String CLIENT_ID = "&client_id=4361da965c654fafa36db6803d26a562";
 
     //vars for asynctask
-    private static final int DEFAULT = 0;
-    private static final int OK = 1;
-    private static final int NO_USER = 2;
+    public static final int DEFAULT = 0;
+    public static final int OK = 1;
+    public static final int NO_USER = 2;
+
     private ArrayList<InstaImages> instaImages;
-    private ImageView imageView;
+    private GridView gridView;
+    private DisplayImageOptions options;
+    private ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imageView = (ImageView) findViewById(R.id.imageView);
+
         final EditText editText = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
+        mImageView = (ImageView) findViewById(R.id.profileImage);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new CheckNameTask().execute(editText.getText().toString());
+            }
+        });
+        gridView = (GridView) findViewById(R.id.gridView);
+        options = new DisplayImageOptions.Builder()
+                .cacheInMemory(true)
+                .cacheOnDisc(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .denyCacheImageMultipleSizesInMemory()
+                .discCacheFileNameGenerator(new Md5FileNameGenerator())
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
+                .writeDebugLogs() // Remove for release app
+                .build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(config);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Toast.makeText(MainActivity.this, String.valueOf(instaImages.get(position).count), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -92,7 +122,9 @@ public class MainActivity extends Activity {
     class CheckNameTask extends AsyncTask<String, Void, Integer> {
 
         private String mName;
+        private String profilePicture;
         private int mId;
+        private ProgressDialog mProgressDialog;
 
         @Override
         protected Integer doInBackground(String... name) {
@@ -112,6 +144,7 @@ public class MainActivity extends Activity {
                     else {
                         JSONObject user = array.getJSONObject(0);
                         String userName = user.getString("username");
+                        profilePicture = user.getString("profile_picture");
                         if (userName.equalsIgnoreCase(name[0])){
                             mName = userName;
                             mId = user.getInt("id");
@@ -132,15 +165,25 @@ public class MainActivity extends Activity {
         }
 
         @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = new ProgressDialog(MainActivity.this);
+            mProgressDialog.setMessage("Checking user");
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.show();
+        }
+
+        @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
+            mProgressDialog.dismiss();
             switch (result){
                 case DEFAULT:
                     Toast.makeText(MainActivity.this,"Mistake", Toast.LENGTH_SHORT).show();
                     break;
                 case OK:
                     new GetImagesTask().execute(String.valueOf(mId));
-                    Toast.makeText(MainActivity.this,"WELL DONE! User - " + mName + ", ID = " + mId, Toast.LENGTH_SHORT).show();
+                    ImageLoader.getInstance().displayImage(profilePicture,mImageView,options);
                     break;
                 case NO_USER:
                     Toast.makeText(MainActivity.this,"No such user", Toast.LENGTH_SHORT).show();
@@ -151,13 +194,15 @@ public class MainActivity extends Activity {
 
     class GetImagesTask extends AsyncTask<String, Void, Integer> {
 
+        private ProgressDialog mProgressDialog;
+
         @Override
         protected Integer doInBackground(String... name) {
             try {
                 DefaultHttpClient client = new DefaultHttpClient();
                 HttpGet request = new HttpGet();
                 HttpResponse response = null;
-                request = new HttpGet(MAIN_URL + name[0] + MEDIA  + ACCESS_TOKEN);
+                request = new HttpGet(MainActivity.MAIN_URL + name[0] + MainActivity.MEDIA  + MainActivity.ACCESS_TOKEN);
                 response = client.execute(request);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "UTF-8"));
                 String json = reader.readLine();
@@ -165,7 +210,7 @@ public class MainActivity extends Activity {
                 JSONArray array = new JSONObject(json).getJSONArray("data");
                 if (meta.getInt("code") == 200){
                     if (array.length() == 0)
-                        return NO_USER;
+                        return MainActivity.NO_USER;
                     else {
                         instaImages = new ArrayList<InstaImages>();
                         for (int i = 0; i < array.length(); i++){
@@ -175,67 +220,44 @@ public class MainActivity extends Activity {
                             }
                         }
                         Collections.sort(instaImages, new InstaComparator());
-                        return OK;
+                        return MainActivity.OK;
                     }
                 } else
-                    return DEFAULT;
+                    return MainActivity.DEFAULT;
 
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return DEFAULT;
+            return MainActivity.DEFAULT;
         }
 
-            @Override
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = new ProgressDialog(MainActivity.this);
+            mProgressDialog.setMessage("Downloading images");
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.show();
+        }
+
+        @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
+            mProgressDialog.dismiss();
             switch (result){
-                case DEFAULT:
-                    Toast.makeText(MainActivity.this,"Mistake", Toast.LENGTH_SHORT).show();
+                case MainActivity.DEFAULT:
+                    Toast.makeText(MainActivity.this, "Mistake", Toast.LENGTH_SHORT).show();
                     break;
-                case OK:
-                    File cacheDir = StorageUtils.getCacheDirectory(MainActivity.this);
-                    ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(MainActivity.this)
-                            .memoryCacheExtraOptions(480, 800) // default = device screen dimensions
-                            .discCacheExtraOptions(480, 800, Bitmap.CompressFormat.JPEG, 75, null)
-                            .threadPriority(Thread.NORM_PRIORITY - 1) // default
-                            .tasksProcessingOrder(QueueProcessingType.FIFO) // default
-                            .denyCacheImageMultipleSizesInMemory()
-                            .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
-                            .memoryCacheSize(2 * 1024 * 1024)
-                            .memoryCacheSizePercentage(13) // default
-                            .discCache(new UnlimitedDiscCache(cacheDir)) // default
-                            .discCacheSize(50 * 1024 * 1024)
-                            .discCacheFileCount(100)
-                            .discCacheFileNameGenerator(new HashCodeFileNameGenerator()) // default
-                            .imageDownloader(new BaseImageDownloader(MainActivity.this)) // default
-                            .defaultDisplayImageOptions(DisplayImageOptions.createSimple()) // default
-                            .writeDebugLogs()
-                            .build();
-                    ImageLoader.getInstance().init(config);
-                    ImageLoader.getInstance().displayImage(instaImages.get(0).url,imageView);
-
-                    Toast.makeText(MainActivity.this,"WELL DONE!", Toast.LENGTH_SHORT).show();
+                case MainActivity.OK:
+                    gridView.setAdapter(new ImageAdapter(MainActivity.this,instaImages,options));
                     break;
-                case NO_USER:
+                case MainActivity.NO_USER:
                     Toast.makeText(MainActivity.this,"No such user", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
-    }
-
-    public class InstaImages {
-
-        public String url;
-        public int count;
-
-        public InstaImages(int count, String url) {
-            this.url = url;
-            this.count = count;
-        }
-
     }
 
     public class InstaComparator implements Comparator<InstaImages> {

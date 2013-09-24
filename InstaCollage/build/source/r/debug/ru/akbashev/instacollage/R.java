@@ -864,7 +864,8 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int bg=0x7f020057;
+        public static final int ic_launcher=0x7f020058;
     }
     public static final class id {
         public static final int action_bar=0x7f07001a;
@@ -893,17 +894,17 @@ containing a value of this type.
         public static final int dialog=0x7f070012;
         public static final int disableHome=0x7f070008;
         public static final int dropdown=0x7f070013;
-        public static final int editText=0x7f070043;
+        public static final int editText=0x7f070042;
         public static final int edit_query=0x7f070036;
         public static final int end=0x7f07000c;
         public static final int expand_activities_button=0x7f070024;
         public static final int expanded_menu=0x7f07002a;
+        public static final int gridView=0x7f070045;
         public static final int home=0x7f070017;
         public static final int homeAsUp=0x7f070005;
         public static final int icon=0x7f070028;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070025;
-        public static final int imageView=0x7f070045;
         public static final int left_icon=0x7f070031;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070027;
@@ -911,6 +912,7 @@ containing a value of this type.
         public static final int never=0x7f07000d;
         public static final int none=0x7f070009;
         public static final int normal=0x7f070000;
+        public static final int profileImage=0x7f070043;
         public static final int progress_circular=0x7f070034;
         public static final int progress_horizontal=0x7f070035;
         public static final int radio=0x7f07002d;
@@ -933,7 +935,6 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001c;
         public static final int submit_area=0x7f07003f;
         public static final int tabMode=0x7f070002;
-        public static final int textView=0x7f070042;
         public static final int title=0x7f070029;
         public static final int title_container=0x7f070030;
         public static final int top_action_bar=0x7f07001e;
@@ -974,7 +975,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030017;
         public static final int activity_main=0x7f030018;
         public static final int activity_test=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int grid_view_item=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -1005,18 +1007,13 @@ containing a value of this type.
     }
     public static final class style {
         /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values/styles.xml 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values-v11/styles.xml 
- API 11 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b0000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b0001;
+        public static final int MyActionBar=0x7f0b0081;
         /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0002;

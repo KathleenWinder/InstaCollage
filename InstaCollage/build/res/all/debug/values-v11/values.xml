@@ -2,8 +2,14 @@
 <resources>
 
     <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values-v11/styles.xml -->
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+
         <!-- API 11 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse">
+        <item name="android:background">@android:color/holo_orange_dark</item>
     </style>
     <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values-v11/values.xml -->
     <style name="Theme.Base" parent="android:Theme.Holo">

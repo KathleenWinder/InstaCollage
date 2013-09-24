@@ -4328,13 +4328,16 @@ false
 
                 <style
                     name="AppBaseTheme"
-                    parent="Theme.AppCompat.Light.DarkActionBar" >
+                    parent="@style/Theme.AppCompat.Light.DarkActionBar" >
 
                     <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
                     -->
+                    <item name="android:background">
+@drawable/bg
+                    </item>
                 </style>
 
                 <style
@@ -4403,12 +4406,33 @@ false
                 qualifiers="v11" >
 
                 <style
+                    name="MyActionBar"
+                    parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse" >
+                    <item name="android:background">
+@android:color/holo_orange_dark
+                    </item>
+                </style>
+
+                <style
                     name="AppBaseTheme"
-                    parent="android:Theme.Holo.Light" >
+                    parent="Theme.AppCompat.Light" >
 
                     <!-- API 11 theme customizations can go here. -->
+                    <item name="android:actionBarStyle">
+@style/MyActionBar
+                    </item>
                 </style>
             </file>
+            <file
+                name="grid_view_item"
+                path="/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/layout/grid_view_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="bg"
+                path="/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/drawable-hdpi/bg.jpg"
+                qualifiers="hdpi"
+                type="drawable" />
         </source>
         <source path="/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/res/rs/debug" />
     </dataSet>

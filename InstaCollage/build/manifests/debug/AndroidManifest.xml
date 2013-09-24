@@ -6,16 +6,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppBaseTheme">
-        <activity android:label="@string/app_name" android:name="ru.akbashev.instacollage.MainActivity">
+        <activity android:label="@string/app_name" android:name="ru.akbashev.instacollage.MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:label="@string/title_activity_test" android:launchMode="singleInstance" android:name="ru.akbashev.instacollage.TestActivity">
-            <intent-filter>
-                <data android:host="success" android:scheme="instacollage"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
             </intent-filter>
         </activity>
     </application>

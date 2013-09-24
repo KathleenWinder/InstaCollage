@@ -15,22 +15,14 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppBaseTheme" >
+        android:theme="@style/AppBaseTheme">
         <activity
             android:name="ru.akbashev.instacollage.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="ru.akbashev.instacollage.TestActivity"
-            android:label="@string/title_activity_test"
-            android:launchMode="singleInstance">
-            <intent-filter>
-                <data android:scheme="instacollage" android:host="success"></data>
-                <category android:name="android.intent.category.BROWSABLE"></category>
             </intent-filter>
         </activity>
     </application>

@@ -511,12 +511,14 @@
     <string name="nickname_hint">Введите никнейм пользователя</string>
     <string name="title_activity_test">TestActivity</string>
     <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values/styles.xml -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+        <item name="android:background">@drawable/bg</item>
     </style>
 
     <style name="AppTheme" parent="AppBaseTheme">
