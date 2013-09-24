@@ -35,5 +35,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="48dp" />
 
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="#ccc"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
 <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/layout/activity_main.xml -->
