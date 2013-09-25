@@ -4,9 +4,14 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,6 +51,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -71,6 +77,7 @@ public class MainActivity extends Activity {
     public static final int NO_USER = 2;
 
     private ArrayList<InstaImages> instaImages;
+    private ArrayList<Bitmap> mBitmaps = new ArrayList<Bitmap>();
     private GridView gridView;
     private DisplayImageOptions options;
     private ImageView mImageView;
@@ -106,7 +113,23 @@ public class MainActivity extends Activity {
         ImageLoader.getInstance().init(config);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Toast.makeText(MainActivity.this, String.valueOf(instaImages.get(position).count), Toast.LENGTH_SHORT).show();
+                mBitmaps.add(instaImages.get(position).bitmap);
+                if (mBitmaps.size() == 4){
+                    Bitmap bmOverlay = Bitmap.createBitmap(mBitmaps.get(0).getWidth()*2, mBitmaps.get(0).getHeight()*2, mBitmaps.get(0).getConfig());
+                    Canvas canvas = new Canvas(bmOverlay);
+                    canvas.drawBitmap(mBitmaps.get(0), 0f, 0f, null);
+                    canvas.drawBitmap(mBitmaps.get(1), 0f, mBitmaps.get(0).getHeight(), null);
+                    canvas.drawBitmap(mBitmaps.get(2), mBitmaps.get(0).getHeight(), 0f, null);
+                    canvas.drawBitmap(mBitmaps.get(3), mBitmaps.get(0).getHeight(), mBitmaps.get(0).getHeight(), null);
+                    String pathofBmp = MediaStore.Images.Media.insertImage(getContentResolver(), bmOverlay,"InstaCollage", null);
+                    Uri bmpUri = Uri.parse(pathofBmp);
+                    Intent emailIntent = new Intent(     android.content.Intent.ACTION_SEND);
+                    emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    emailIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
+                    emailIntent.setType("image/png");
+                    startActivity(emailIntent);
+                    mBitmaps.clear();
+                }
             }
         });
     }
@@ -216,7 +239,7 @@ public class MainActivity extends Activity {
                         for (int i = 0; i < array.length(); i++){
                             JSONObject current = array.getJSONObject(i);
                             if (current.getString("type").equalsIgnoreCase("image")){
-                                instaImages.add(new InstaImages(current.getJSONObject("likes").getInt("count"),current.getJSONObject("images").getJSONObject("standard_resolution").getString("url")));
+                                instaImages.add(new InstaImages(current.getJSONObject("likes").getInt("count"),current.getJSONObject("images").getJSONObject("standard_resolution").getString("url"), null));
                             }
                         }
                         Collections.sort(instaImages, new InstaComparator());

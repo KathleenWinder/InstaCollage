@@ -1,6 +1,7 @@
 package ru.akbashev.instacollage;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 
 import java.util.ArrayList;
 
@@ -42,7 +44,7 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final ImageView imageView;
         final TextView textView;
         if (convertView == null) {
@@ -52,8 +54,12 @@ public class ImageAdapter extends BaseAdapter {
             imageView = (ImageView) convertView;
         }
 
-        ImageLoader.getInstance().displayImage(mInstaImages.get(position).url, imageView, mOptions);
-
+        ImageLoader.getInstance().displayImage(mInstaImages.get(position).url, imageView, mOptions, new SimpleImageLoadingListener() {
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                mInstaImages.get(position).bitmap = loadedImage;
+            }
+        });
         return imageView;
     }
 }
