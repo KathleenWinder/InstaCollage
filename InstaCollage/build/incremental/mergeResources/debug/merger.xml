@@ -4354,6 +4354,9 @@ false
                     <item name="android:background">
 @color/holo_orange_dark
                     </item>
+                    <item name="background">
+@color/holo_orange_dark
+                    </item>
                 </style>
             </file>
             <file
@@ -4367,11 +4370,6 @@ false
             <file
                 name="ic_launcher"
                 path="/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/drawable-hdpi/ic_launcher.png"
-                qualifiers="hdpi"
-                type="drawable" />
-            <file
-                name="bg"
-                path="/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/drawable-hdpi/bg.jpg"
                 qualifiers="hdpi"
                 type="drawable" />
             <file

@@ -234,7 +234,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(MainActivity.this,"Проверяем, существует ли такой аользователь...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Проверяем, существует ли такой пользователь...", Toast.LENGTH_SHORT).show();
         }
 
         @Override

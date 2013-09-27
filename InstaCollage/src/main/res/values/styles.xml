@@ -11,5 +11,6 @@
     <style name="MyActionBar"
         parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse">
         <item name="android:background">@color/holo_orange_dark</item>
+        <item name="background">@color/holo_orange_dark</item>
     </style>
 </resources>

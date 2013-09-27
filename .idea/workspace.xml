@@ -12,28 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c029b63-19f5-4962-bd71-4d5ed5fa05ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/SendDialogFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/values/colors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/fragment_dialog.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/layout/activity_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_test.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/ImageAdapter.java" afterPath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/ImageAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/InstaCollage.iml" afterPath="$PROJECT_DIR$/InstaCollage/InstaCollage.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollageProject.iml" afterPath="$PROJECT_DIR$/InstaCollageProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/InstaImages.java" afterPath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/InstaImages.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/drawable-hdpi/bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/drawable-hdpi/bg.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java" afterPath="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/InstaCollage/build/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/source/r/debug/ru/akbashev/instacollage/R.java" afterPath="$PROJECT_DIR$/InstaCollage/build/source/r/debug/ru/akbashev/instacollage/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/layout/grid_view_item.xml" afterPath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/layout/grid_view_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/grid_view_item.xml" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/layout/grid_view_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/src/main/res/values-v11/styles.xml" afterPath="$PROJECT_DIR$/InstaCollage/src/main/res/values-v11/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/values/values.xml" afterPath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/values-v11/values.xml" afterPath="$PROJECT_DIR$/InstaCollage/build/res/all/debug/values-v11/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="InstaCollage.iws" />
@@ -84,6 +68,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </line_breakpoints>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -120,7 +105,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -130,14 +114,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="96" column="0" selection-start="298" selection-end="3808" vertical-scroll-proportion="0.0" vertical-offset="987" max-vertical-offset="1545">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="17" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="540">
-              <folding>
-                <element signature="e#565#583#0" expanded="true" />
-                <element signature="e#738#756#0" expanded="true" />
-              </folding>
+            <state line="18" column="17" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="540">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,49 +138,49 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="311" column="54" selection-start="13283" selection-end="13283" vertical-scroll-proportion="0.0" vertical-offset="3763" max-vertical-offset="4410">
-              <folding>
-                <element signature="e#3947#4092#0" expanded="true" />
-                <element signature="e#4081#4082#0" expanded="true" />
-              </folding>
+            <state line="236" column="78" selection-start="9829" selection-end="9829" vertical-scroll-proportion="0.0" vertical-offset="3540" max-vertical-offset="5175">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="styles.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/values-v11/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+            <state line="15" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.42293233" vertical-offset="0" max-vertical-offset="532">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid_view_item.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/grid_view_item.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="36" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="555">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="fragment_dialog.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/fragment_dialog.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="24" selection-start="450" selection-end="450" vertical-scroll-proportion="-5.6896553" vertical-offset="0" max-vertical-offset="390">
+            <state line="11" column="24" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="390">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="18" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstaImages.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/InstaImages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="19" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="480">
+            <state line="16" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -196,31 +189,7 @@
       <file leaf-file-name="SendDialogFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/SendDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="69" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1199#1944#0" expanded="true" />
-                <element signature="e#1925#1926#0" expanded="true" />
-                <element signature="e#1994#2189#0" expanded="true" />
-                <element signature="e#2170#2171#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="12" selection-start="473" selection-end="473" vertical-scroll-proportion="0.3125" vertical-offset="0" max-vertical-offset="480">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageAdapter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/ImageAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="49" selection-start="3460" selection-end="3460" vertical-scroll-proportion="0.0" vertical-offset="1470" max-vertical-offset="1665">
+            <state line="36" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="870">
               <folding />
             </state>
           </provider>
@@ -608,12 +577,12 @@
         <option value="$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/InstaCollage/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/ImageAdapter.java" />
-        <option value="$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/SendDialogFragment.java" />
         <option value="$PROJECT_DIR$/InstaCollage/src/main/res/layout/grid_view_item.xml" />
         <option value="$PROJECT_DIR$/InstaCollage/src/main/res/layout/fragment_dialog.xml" />
-        <option value="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -659,7 +628,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -852,6 +820,126 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xxhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-xhdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollageProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InstaCollage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -862,6 +950,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -875,7 +964,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="256" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="01a93a95468c6edf" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="43423531315630324C45" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -884,6 +973,7 @@
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="2.3device" />
   </component>
   <component name="RunManager" selected="Android Application.InstaCollage">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -913,6 +1003,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -938,19 +1041,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1087,12 +1177,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-2" width="1617" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27511197" sideWeight="0.5635359" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.4996801" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3082873" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1101,18 +1190,19 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19257838" sideWeight="0.2839779" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4364641" sideWeight="0.4996801" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37900552" sideWeight="0.4996801" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33940774" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24952015" sideWeight="0.65745854" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19257838" sideWeight="0.5635359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19257838" sideWeight="0.62099445" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27511197" sideWeight="0.5635359" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1121,13 +1211,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952015" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1140,8 +1230,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1159,14 +1249,18 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/drawable-hdpi/bg.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/SendDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="870">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="16" selection-start="3359" selection-end="3359" vertical-scroll-proportion="0.33951762" vertical-offset="657" max-vertical-offset="17385" />
+        <state line="56" column="16" selection-start="3359" selection-end="3359" vertical-scroll-proportion="0.33951762" vertical-offset="657" max-vertical-offset="17385">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-18/android.jar!/android/widget/AbsListView.class">
@@ -1188,16 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="37" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.0" vertical-offset="267" max-vertical-offset="1545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/InstaImages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="19" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
@@ -1212,76 +1296,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/values-v11/styles.xml">
+    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+        <state line="18" column="17" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="616" selection-end="616" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="236" column="78" selection-start="9829" selection-end="9829" vertical-scroll-proportion="0.0" vertical-offset="2593" max-vertical-offset="4410">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+        <state line="16" column="0" selection-start="637" selection-end="637" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="17" selection-start="646" selection-end="646" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="540">
-          <folding>
-            <element signature="e#565#583#0" expanded="true" />
-            <element signature="e#738#756#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/fragment_dialog.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="24" selection-start="450" selection-end="450" vertical-scroll-proportion="-5.6896553" vertical-offset="0" max-vertical-offset="390">
+        <state line="11" column="24" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="390">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/grid_view_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="391" selection-end="391" vertical-scroll-proportion="0.19955654" vertical-offset="45" max-vertical-offset="555">
+        <state line="9" column="36" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="311" column="54" selection-start="13283" selection-end="13283" vertical-scroll-proportion="0.0" vertical-offset="3763" max-vertical-offset="4410">
-          <folding>
-            <element signature="e#3947#4092#0" expanded="true" />
-            <element signature="e#4081#4082#0" expanded="true" />
-          </folding>
+        <state line="96" column="0" selection-start="298" selection-end="3808" vertical-scroll-proportion="0.0" vertical-offset="987" max-vertical-offset="1545">
+          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/java/ru/akbashev/instacollage/SendDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="69" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1199#1944#0" expanded="true" />
-            <element signature="e#1925#1926#0" expanded="true" />
-            <element signature="e#1994#2189#0" expanded="true" />
-            <element signature="e#2170#2171#0" expanded="true" />
-          </folding>
+        <state line="36" column="0" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="870">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/InstaCollage/src/main/res/values-v11/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="473" selection-end="473" vertical-scroll-proportion="0.3125" vertical-offset="0" max-vertical-offset="480">
+        <state line="15" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.42293233" vertical-offset="0" max-vertical-offset="532">
           <folding />
         </state>
       </provider>

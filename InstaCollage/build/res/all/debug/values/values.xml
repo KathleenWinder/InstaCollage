@@ -524,6 +524,7 @@
 
     <style name="MyActionBar" parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse">
         <item name="android:background">@color/holo_orange_dark</item>
+        <item name="background">@color/holo_orange_dark</item>
     </style>
     <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml -->
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">
