@@ -12,7 +12,9 @@ InstaCollage
 ============
 
 21.09.13 - 15:45 - creating app and repo.
+
 23.09.13 - Started creating app.
+
 27.09.13 - Creating ended.
 
 ============
