@@ -9,7 +9,7 @@
     </style>
 
     <style name="MyActionBar" parent="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse">
-        <item name="android:background">@android:color/holo_orange_dark</item>
+        <item name="android:background">@color/holo_orange_dark</item>
     </style>
     <!-- From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values-v11/values.xml -->
     <style name="Theme.Base" parent="android:Theme.Holo">

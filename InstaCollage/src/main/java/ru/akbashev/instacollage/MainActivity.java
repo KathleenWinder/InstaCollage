@@ -1,68 +1,49 @@
 package ru.akbashev.instacollage;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
+import android.provider.MediaStore;
+import android.support.v4.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Activity;
-import android.provider.MediaStore;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
-import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
-import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
-import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.conn.ClientConnectionManager;
-import org.apache.http.conn.scheme.PlainSocketFactory;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.scheme.SchemeRegistry;
-import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
-import org.apache.http.params.BasicHttpParams;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     //vars to work with url
     public static final String MAIN_URL = "https://api.instagram.com/v1/users/";
@@ -76,11 +57,17 @@ public class MainActivity extends Activity {
     public static final int OK = 1;
     public static final int NO_USER = 2;
 
-    private ArrayList<InstaImages> instaImages;
-    private ArrayList<Bitmap> mBitmaps = new ArrayList<Bitmap>();
+    private ArrayList<InstaImages> instaImages = new ArrayList<InstaImages>();
+    private ArrayList<Integer> mPositions = new ArrayList<Integer>();
+    private Map<Integer,Bitmap> mBitmaps = new HashMap<Integer,Bitmap>();
     private GridView gridView;
     private DisplayImageOptions options;
     private ImageView mImageView;
+    private ImageAdapter adapter;
+    private Button send;
+    private Button cancel;
+    private TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,57 +76,115 @@ public class MainActivity extends Activity {
 
         final EditText editText = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
+        send = (Button) findViewById(R.id.send);
+        cancel = (Button) findViewById(R.id.cancel);
+        textView = (TextView) findViewById(R.id.textView);
         mImageView = (ImageView) findViewById(R.id.profileImage);
+        gridView = (GridView) findViewById(R.id.gridView);
+        adapter = new ImageAdapter(MainActivity.this,instaImages,options);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 new CheckNameTask().execute(editText.getText().toString());
+                InputMethodManager imm = (InputMethodManager)getSystemService(
+                        Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                onCancel();
             }
         });
-        gridView = (GridView) findViewById(R.id.gridView);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onCancel();
+            }
+        });
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onSend();
+            }
+        });
+
         options = new DisplayImageOptions.Builder()
                 .cacheInMemory(true)
                 .cacheOnDisc(true)
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .build();
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .memoryCacheExtraOptions(612, 612)
+                .discCacheExtraOptions(612, 612, Bitmap.CompressFormat.JPEG, 75, null)
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                 .discCacheFileNameGenerator(new Md5FileNameGenerator())
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
-                .writeDebugLogs() // Remove for release app
                 .build();
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                mBitmaps.add(instaImages.get(position).bitmap);
-                if (mBitmaps.size() == 4){
-                    Bitmap bmOverlay = Bitmap.createBitmap(mBitmaps.get(0).getWidth()*2, mBitmaps.get(0).getHeight()*2, mBitmaps.get(0).getConfig());
-                    Canvas canvas = new Canvas(bmOverlay);
-                    canvas.drawBitmap(mBitmaps.get(0), 0f, 0f, null);
-                    canvas.drawBitmap(mBitmaps.get(1), 0f, mBitmaps.get(0).getHeight(), null);
-                    canvas.drawBitmap(mBitmaps.get(2), mBitmaps.get(0).getHeight(), 0f, null);
-                    canvas.drawBitmap(mBitmaps.get(3), mBitmaps.get(0).getHeight(), mBitmaps.get(0).getHeight(), null);
-                    String pathofBmp = MediaStore.Images.Media.insertImage(getContentResolver(), bmOverlay,"InstaCollage", null);
-                    Uri bmpUri = Uri.parse(pathofBmp);
-                    Intent emailIntent = new Intent(     android.content.Intent.ACTION_SEND);
-                    emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    emailIntent.putExtra(Intent.EXTRA_STREAM, bmpUri);
-                    emailIntent.setType("image/png");
-                    startActivity(emailIntent);
-                    mBitmaps.clear();
-                }
+                    onItemSelect(position);
             }
         });
     }
 
+    void onCancel(){
+        for (int i = 0; i < mPositions.size(); i++)
+            instaImages.get(mPositions.get(i)).state = false;
+        mBitmaps.clear();
+        mPositions.clear();
+        adapter.notifyDataSetChanged();
+        textView.setVisibility(View.GONE);
+        send.setVisibility(View.GONE);
+        cancel.setVisibility(View.GONE);
+    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    void onSend(){
+        Bitmap bmOverlay = Bitmap.createBitmap(mBitmaps.get(mPositions.get(0)).getWidth()*2, mBitmaps.get(mPositions.get(0)).getHeight()*2, mBitmaps.get(mPositions.get(0)).getConfig());
+        Canvas canvas = new Canvas(bmOverlay);
+        canvas.drawBitmap(mBitmaps.get(mPositions.get(0)), 0f, 0f, null);
+        canvas.drawBitmap(mBitmaps.get(mPositions.get(1)), mBitmaps.get(mPositions.get(0)).getWidth(), 0f, null);
+        canvas.drawBitmap(mBitmaps.get(mPositions.get(2)), 0f, mBitmaps.get(mPositions.get(0)).getHeight(), null);
+        canvas.drawBitmap(mBitmaps.get(mPositions.get(3)), mBitmaps.get(mPositions.get(0)).getHeight(), mBitmaps.get(mPositions.get(0)).getWidth(), null);
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmOverlay.compress(Bitmap.CompressFormat.PNG, 0, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        FragmentManager fm = getSupportFragmentManager();
+        SendDialogFragment dF = new SendDialogFragment();
+        Bundle bundle = new Bundle();
+        bundle.putByteArray("pathOfBmp", byteArray);
+        dF.setArguments(bundle);
+        dF.show(fm, null);
+    }
+
+    void onItemSelect(int position){
+        if (mBitmaps.get(position) == null){
+            if (mBitmaps.size() < 4 && instaImages.get(position).bitmap != null){
+                mBitmaps.put(position,instaImages.get(position).bitmap);
+                mPositions.add(position);
+                instaImages.get(position).state = true;
+                adapter.notifyDataSetChanged();
+                textView.setText(String.valueOf(mBitmaps.size()));
+                textView.setVisibility(View.VISIBLE);
+            }
+            if (mBitmaps.size() == 4){
+                send.setVisibility(View.VISIBLE);
+                cancel.setVisibility(View.VISIBLE);
+            }
+        }else {
+            mBitmaps.remove(position);
+            mPositions.remove((Object) position);
+            instaImages.get(position).state = false;
+            adapter.notifyDataSetChanged();
+            textView.setText(String.valueOf(mBitmaps.size()));
+            send.setVisibility(View.GONE);
+            cancel.setVisibility(View.GONE);
+        }
+        if (mPositions.size() == 0){
+            textView.setVisibility(View.GONE);
+        }
     }
 
     class CheckNameTask extends AsyncTask<String, Void, Integer> {
@@ -147,7 +192,6 @@ public class MainActivity extends Activity {
         private String mName;
         private String profilePicture;
         private int mId;
-        private ProgressDialog mProgressDialog;
 
         @Override
         protected Integer doInBackground(String... name) {
@@ -190,26 +234,25 @@ public class MainActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressDialog = new ProgressDialog(MainActivity.this);
-            mProgressDialog.setMessage("Checking user");
-            mProgressDialog.setCancelable(false);
-            mProgressDialog.show();
+            Toast.makeText(MainActivity.this,"Проверяем, существует ли такой аользователь...", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
-            mProgressDialog.dismiss();
             switch (result){
                 case DEFAULT:
-                    Toast.makeText(MainActivity.this,"Mistake", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Ошибка!", Toast.LENGTH_SHORT).show();
                     break;
                 case OK:
                     new GetImagesTask().execute(String.valueOf(mId));
+                    instaImages = new ArrayList<InstaImages>();
+                    adapter = new ImageAdapter(MainActivity.this,instaImages,options);
+                    gridView.setAdapter(adapter);
                     ImageLoader.getInstance().displayImage(profilePicture,mImageView,options);
                     break;
                 case NO_USER:
-                    Toast.makeText(MainActivity.this,"No such user", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Такого пользователя не существует...", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -239,7 +282,7 @@ public class MainActivity extends Activity {
                         for (int i = 0; i < array.length(); i++){
                             JSONObject current = array.getJSONObject(i);
                             if (current.getString("type").equalsIgnoreCase("image")){
-                                instaImages.add(new InstaImages(current.getJSONObject("likes").getInt("count"),current.getJSONObject("images").getJSONObject("standard_resolution").getString("url"), null));
+                                instaImages.add(new InstaImages(current.getJSONObject("likes").getInt("count"),current.getJSONObject("images").getJSONObject("standard_resolution").getString("url"), null, false));
                             }
                         }
                         Collections.sort(instaImages, new InstaComparator());
@@ -260,7 +303,7 @@ public class MainActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(MainActivity.this);
-            mProgressDialog.setMessage("Downloading images");
+            mProgressDialog.setMessage("Выбираем для вас лучшие фотографии пользователя...");
             mProgressDialog.setCancelable(false);
             mProgressDialog.show();
         }
@@ -271,13 +314,14 @@ public class MainActivity extends Activity {
             mProgressDialog.dismiss();
             switch (result){
                 case MainActivity.DEFAULT:
-                    Toast.makeText(MainActivity.this, "Mistake", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Ошибка!", Toast.LENGTH_SHORT).show();
                     break;
                 case MainActivity.OK:
-                    gridView.setAdapter(new ImageAdapter(MainActivity.this,instaImages,options));
+                    adapter = new ImageAdapter(MainActivity.this,instaImages,options);
+                    gridView.setAdapter(adapter);
                     break;
                 case MainActivity.NO_USER:
-                    Toast.makeText(MainActivity.this,"No such user", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"У этого пользователя нет фотографий...", Toast.LENGTH_SHORT).show();
                     break;
             }
         }

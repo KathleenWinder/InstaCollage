@@ -745,10 +745,14 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f050005;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f060003;
+        public static final int abc_search_url_text_holo=0x7f060005;
         public static final int abc_search_url_text_normal=0x7f060000;
         public static final int abc_search_url_text_pressed=0x7f060001;
         public static final int abc_search_url_text_selected=0x7f060002;
+        /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values/colors.xml 
+         */
+        public static final int holo_blue_light=0x7f060003;
+        public static final int holo_orange_dark=0x7f060004;
     }
     public static final class dimen {
         /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values-w600dp/values.xml 
@@ -883,11 +887,12 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f07002f;
         public static final int action_mode_bar_stub=0x7f07002e;
         public static final int action_mode_close_button=0x7f070022;
-        public static final int action_settings=0x7f070046;
+        public static final int action_settings=0x7f07004c;
         public static final int activity_chooser_view_content=0x7f070023;
         public static final int always=0x7f07000f;
         public static final int beginning=0x7f07000a;
         public static final int button=0x7f070044;
+        public static final int cancel=0x7f070049;
         public static final int checkbox=0x7f07002b;
         public static final int collapseActionView=0x7f070011;
         public static final int default_activity_button=0x7f070026;
@@ -905,6 +910,7 @@ containing a value of this type.
         public static final int icon=0x7f070028;
         public static final int ifRoom=0x7f07000e;
         public static final int image=0x7f070025;
+        public static final int imageView=0x7f07004a;
         public static final int left_icon=0x7f070031;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070027;
@@ -913,6 +919,7 @@ containing a value of this type.
         public static final int none=0x7f070009;
         public static final int normal=0x7f070000;
         public static final int profileImage=0x7f070043;
+        public static final int progressBar=0x7f07004b;
         public static final int progress_circular=0x7f070034;
         public static final int progress_horizontal=0x7f070035;
         public static final int radio=0x7f07002d;
@@ -928,6 +935,7 @@ containing a value of this type.
         public static final int search_plate=0x7f07003c;
         public static final int search_src_text=0x7f07003d;
         public static final int search_voice_btn=0x7f070041;
+        public static final int send=0x7f070046;
         public static final int shortcut=0x7f07002c;
         public static final int showCustom=0x7f070007;
         public static final int showHome=0x7f070004;
@@ -935,11 +943,13 @@ containing a value of this type.
         public static final int split_action_bar=0x7f07001c;
         public static final int submit_area=0x7f07003f;
         public static final int tabMode=0x7f070002;
+        public static final int textView=0x7f070048;
         public static final int title=0x7f070029;
         public static final int title_container=0x7f070030;
         public static final int top_action_bar=0x7f07001e;
         public static final int up=0x7f07001f;
         public static final int useLogo=0x7f070003;
+        public static final int view=0x7f070047;
         public static final int withText=0x7f070010;
     }
     public static final class integer {
@@ -974,7 +984,7 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030016;
         public static final int abc_search_view=0x7f030017;
         public static final int activity_main=0x7f030018;
-        public static final int activity_test=0x7f030019;
+        public static final int fragment_dialog=0x7f030019;
         public static final int grid_view_item=0x7f03001a;
         public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
@@ -1001,19 +1011,18 @@ containing a value of this type.
         public static final int action_settings=0x7f0a000d;
         public static final int app_name=0x7f0a000e;
         public static final int btn_get=0x7f0a000f;
-        public static final int hello_world=0x7f0a0010;
-        public static final int nickname_hint=0x7f0a0011;
-        public static final int title_activity_test=0x7f0a0012;
+        public static final int cancel=0x7f0a0010;
+        public static final int hello_world=0x7f0a0011;
+        public static final int look=0x7f0a0012;
+        public static final int nickname_hint=0x7f0a0013;
+        public static final int title_activity_test=0x7f0a0014;
     }
     public static final class style {
         /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values/styles.xml 
  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/src/main/res/values-v11/styles.xml 
          */
         public static final int AppBaseTheme=0x7f0b0000;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f0b0001;
-        public static final int MyActionBar=0x7f0b0081;
+        public static final int MyActionBar=0x7f0b0001;
         /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0002;
@@ -1149,7 +1158,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b0080;
     }
     public static final class styleable {
-        /** Attributes that can be used with a ActionBar.
+        /**  From: file:/home/jaleel/AndroidStudioProjects/InstaCollageProject/InstaCollage/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml 
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />

@@ -31,19 +31,19 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:horizontalSpacing="4dip"
+        android:horizontalSpacing="1dp"
         android:numColumns="3"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="4dip"
+        android:verticalSpacing="1dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/profileImage" />
+        android:layout_below="@+id/profileImage"
+        android:layout_above="@+id/send" />
     <ImageView
         android:layout_width="90dp"
         android:layout_height="92dp"
         android:paddingBottom="2dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@color/holo_orange_dark"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:id="@+id/profileImage"
@@ -51,7 +51,47 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@color/holo_orange_dark"
         android:layout_alignTop="@+id/gridView"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/view" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="@color/holo_orange_dark"
+        android:id="@+id/view"
+        android:layout_below="@+id/gridView"
         android:layout_alignParentLeft="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:padding="4dp"
+        android:background="@android:color/holo_orange_dark"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        android:id="@+id/textView"
+        android:visibility="gone"
+        android:layout_alignTop="@+id/gridView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/look"
+        android:id="@+id/send"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/button"
+        android:visibility="gone"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/cancel"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_alignLeft="@+id/profileImage" />
 </RelativeLayout>

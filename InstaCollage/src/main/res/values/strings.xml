@@ -7,5 +7,7 @@
     <string name="nickname_hint">Введите никнейм пользователя</string>
     <string name="btn_get">Давай коллаж!</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="look">Посмотреть</string>
+    <string name="cancel">Отмена</string>
 
 </resources>
